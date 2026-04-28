@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barang ayy</title>
+</head>
+<body>
+    <center>
+        <table border="2" width="500" bordercolor="grey">
+            <tr bgcolor="skyblue">
+                <td width="400" height="70">
+                    <h1 style="color: red; text-align: center;">Pendaftaran Kursus</h1>
+                </td>
+            </tr>
+            <tr bgcolor="grey">
+                <td width="400" valign="top">
+                    <h3>Data Diri</h3>
+                    <table>
+                    <tr>
+                        <td>Nama</td>
+                        <td><input type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Nim</td>
+                        <td><input type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td>E-mail</td>
+                        <td><input type="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">Jenis Kelamin</td>
+                        <td><input type="radio" name="jenis_kelamin" value="L"> Laki-laki<br>
+                            <input type="radio" name="jenis_kelamin" value="P"> Perempuan
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">Pilih Program Khusus</td>
+                        <td><input type="checkbox" name="Program" value="c"> C#<br>
+                            <input type="checkbox" name="Program" value="j"> Java<br>
+                            <input type="checkbox" name="Program" value="s"> SQL<br>
+                            <input type="checkbox" name="Program" value="hp"> HTML dan PHP<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">Pilihan Hari/Jam Kursus</td>
+                        <td><select name="Orientasi Minat">
+                            <option value="1">Senin - Rabu/09.00 - 11.00</option>
+                            <option value="2">Rabu - Jum'at/09.00 - 11.00</option>
+                            <option value="3">Sabtu - Minggu/09.00 - 11.00</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                </td>                
+            </tr>
+            <tr bgcolor="salmon">
+                <td width="400">
+                    <p>Komentar Anda</p>
+                    <textarea></textarea>
+                    <fieldset style="border: none; margin: 0; padding: 0;">
+                        <input type="reset" name="reset" value="reset">
+                        <input type="submit" name="submit" value="submit">
+                        <input type="submit" name="cancel" value="cancel">
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+    </center>
+    
+    
+</body>
+</html>
