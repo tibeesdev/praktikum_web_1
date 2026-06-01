@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photography Portfolio - Nama_NIM</title>
+    <title>JPhotography - Ahmad Tibrizi (2510817210027)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/mixins/_grid.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -11,10 +11,54 @@
       .navbar-brand, h1, h2, h3 {
         font-family: 'Georgia', serif;
       }
+      .corner-border {
+        position: absolute;
+        width: 80px;  
+        height: 80px; 
+        border: 10px solid #333; 
+        pointer-events: none; 
+        z-index: 1050;
+      }
+
+      .top-left {
+        top: 0px;
+        left: 0px;
+        border-right: none;
+        border-bottom: none;
+      }
+
+      .top-right {
+        top: 0px;
+        right: 0px;
+        border-left: none;
+        border-bottom: none;
+      }
+
+      .bottom-left {
+        bottom: 0px;
+        left: 0px;
+        border-right: none;
+        border-top: none;
+      }
+
+      .bottom-right {
+        bottom: 0px;
+        right: 0px;
+        border-left: none;
+        border-top: none;
+      }
     </style>
 </head>
-<body><nav class="navbar navbar-expand-lg bg-body-tertiary d-flex flex-column flex-lg-row py-3">
-  <div class="container-fluid d-flex flex-column flex-lg-row align-items-center gap-3">
+
+<body>
+  <div class="position-relative min-vh-100 w-100 m-0 p-0">
+    <div class="corner-border top-left"></div>
+    <div class="corner-border top-right"></div>
+    <div class="corner-border bottom-left"></div>
+    <div class="corner-border bottom-right"></div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-flex flex-column flex-lg-row py-3">
+    <div class="container-fluid d-flex flex-column flex-lg-row align-items-center gap-3">
 
     <a class="navbar-brand fw-bold m-0 ps-0 ps-lg-4" href="#">
         <strong style="font-size: xx-large;">JPhotography</strong>
@@ -50,9 +94,9 @@
 <!-- Text nama sama nim -->
  <div class="container-fluid text-center" style="padding-top: 80px; padding-bottom: 80px;">
     <div class="row align-items-center">
-        <h2 style="font-weight: 500;">Hi. Hello.. I Am Ahmad Tibrizi (2510717210027)...!</h2>
-        <h2 style="font-weight: 500;">I Travel Arround The World To Get The Best Photos.!</h2>
-        <h4 style="font-weight: 100; opacity: 0.5;">AWARD WINNING PHOTOGRAPHER / CINEMATOGHRAPHER / WRITER</h4>
+        <h2 style="font-weight: 500;">Hi. Hello.. I Am Ahmad Tibrizi (2510817210027)...!</h2>
+        <h2 style="font-weight: 500;">I Travel Around The World To Get The Best Photos.!</h2>
+        <h4 style="font-weight: 100; opacity: 0.5;">AWARD WINNING PHOTOGRAPHER / CINEMATOGRAPHER / WRITER</h4>
     </div>
  </div>
 
@@ -66,7 +110,7 @@
       Landscape
     </div>
     <div class="col col-lg-auto" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 200">
-      Potrait
+      Portrait
     </div>
     <div class="col col-lg-auto" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 200">
       Product
@@ -207,16 +251,13 @@
   <i class="fa-brands fa-facebook"></i>
   <i class="fa-brands fa-twitter"></i>
 </div>
-  </div>
+</div>
 </footer>
-
-
+</div>
 <script>
   function onImageClick(link) {
     window.open(link, '_blank');
-    
   }
-
 </script>
 </body>
 </html>
