@@ -47,6 +47,54 @@
         border-left: none;
         border-top: none;
       }
+
+      .custom-btn {
+        padding: 10px 20px !important; 
+        border: 1px solid rgba(0, 0, 0, 0.5); 
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+        color: #000 !important;
+      }
+
+      .custom-btn:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      .custom-btn.active {
+        background-color: #000 !important; 
+        color: #fff !important; 
+        border-color: #000 !important;
+      }
+
+      .filter-btn:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+      }
+
+      .active-filter {
+        border: 1px solid rgba(33, 37, 41, 0.8) !important; 
+        border-radius: 2rem !important; 
+        font-weight: 500 !important;
+      }
+
+      .filter-btn {
+        transition: transform 0.1s ease;
+      }
+            
+      .filter-btn:active {
+        transform: scale(0.95);
+      }
+
+      .filter-btn:not(.active-filter) {
+        border: 1px solid transparent !important;
+        font-weight: 200 !important;
+      }
+
+      .filter-btn.active-filter {
+        border: 1px solid rgba(33, 37, 41, 0.8) !important; 
+        border-radius: 2rem !important;
+        font-weight: 500 !important;
+      }
     </style>
 </head>
 
@@ -67,28 +115,21 @@
     <div class="d-flex flex-row justify-content-center justify-content-lg-end align-items-center w-100 pe-0 pe-lg-4">
       <ul class="navbar-nav mb-2 mb-lg-0 gap-3 text-center flex-row w-100 justify-content-center justify-content-lg-end">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
-            <span class="border border-dark rounded-3 border-opacity-50" style="padding: 10px; padding-left: 20px; padding-right: 20px;">HOME</span>
-            </a>
+          <a class="nav-link custom-btn active" aria-current="page" href="#">HOME</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span style="padding: 10px; padding-left: 20px; padding-right: 20px;">ABOUT ME</span>
-            </a>
+          <a class="nav-link custom-btn" href="#">ABOUT ME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span style="padding: 10px; padding-left: 20px; padding-right: 20px;">PORTOFOLIO</span>
-            </a>
+          <a class="nav-link custom-btn" href="#">PORTOFOLIO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span style="padding: 10px; padding-left: 20px; padding-right: 20px;">CONTACT</span>
-            </a>
+          <a class="nav-link custom-btn" href="#">CONTACT</a>
         </li>
-      </ul> </div>
-  </div>
+  </ul> 
+</div>
+</div>
 </nav>
 
 <!-- Text nama sama nim -->
@@ -103,16 +144,16 @@
  <!-- navigasi foto -->
 <div class="container-fluid text-center ">
   <div class="row justify-content-center">
-    <div class="col col-lg-auto border border-dark rounded-5 border-opacity-80" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 500;">
+    <div class="col col-lg-auto border border-dark rounded-5 border-opacity-80 filter-btn active-filter" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 500; cursor: pointer;">
       All
     </div>
-    <div class="col col-lg-auto" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 200;">
+    <div class="col col-lg-auto filter-btn" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 200; cursor: pointer;">
       Landscape
     </div>
-    <div class="col col-lg-auto" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 200">
+    <div class="col col-lg-auto filter-btn" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 200; cursor: pointer;">
       Portrait
     </div>
-    <div class="col col-lg-auto" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 200">
+    <div class="col col-lg-auto filter-btn" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; font-weight: 200; cursor: pointer;">
       Product
     </div>
   </div>
@@ -121,7 +162,7 @@
 <div style="height: 20px;"></div>
 
 <!-- foto grid -->
- <div class="container-fluid text-center">
+<div class="container-fluid text-center">
 <!-- row 1 -->
   <div class="row justify-content-center g-2 mb-4">
     <div class="col-6 col-sm-auto">
@@ -258,6 +299,32 @@
   function onImageClick(link) {
     window.open(link, '_blank');
   }
+
+  const navLinks = document.querySelectorAll('.custom-btn');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+
+      e.preventDefault(); 
+
+      document.querySelector('.custom-btn.active').classList.remove('active');
+
+      this.classList.add('active');
+    });
+  });
+
+  const filterButtons = document.querySelectorAll('.filter-btn');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const currentActive = document.querySelector('.filter-btn.active-filter');
+      if (currentActive) {
+        currentActive.classList.remove('active-filter');
+      }
+
+      this.classList.add('active-filter');
+    });
+  });
 </script>
 </body>
 </html>
